@@ -1,0 +1,19 @@
+{
+  "name": "hactive",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Realkah",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.28.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "multer": "^2.0.2"
+  }
+}
