@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+body, html {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(145deg, #fefefe, #d1d9ff); 
+  padding: 30px;
+  border-radius: 0;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+#main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #5b6ac9; /* warna biru keunguan yang elegan */
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-shadow: 0 0 6px rgba(91, 106, 201, 0.45);
+  margin-bottom: 8px;
+  user-select: none;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  transition: color 0.3s ease;
+}
+
+#main-title:hover {
+  color: #3f4bb0;
+  text-shadow: 0 0 10px rgba(134, 146, 252, 0.6);
+  cursor: context-menu;
+}
+
+#sub-title {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #9ba3d6; /* warna biru pastel lembut */
+  text-align: center;
+  font-style: normal;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+  user-select: none;
+  font-family: 'Open Sans', 'Inter', sans-serif;
+  text-shadow: 0 0 3px rgba(155, 163, 214, 0.3);
+  transition: color 0.3s ease;
+}
+
+#sub-title:hover {
+  color: #7a81be;
+  text-shadow: 0 0 6px rgba(82, 97, 235, 0.45);
+  cursor: context-menu;
+}
+
+
+.chat-box {
+  flex-grow: 1;
+  height: auto; /* sesuaikan tinggi */
+  min-height: 0; /* supaya flex grow berfungsi */
+  overflow-y: auto;
+  padding: 20px 25px;
+  border-radius: 20px;
+  background: #e9f0ff; /* warna soft biru lebih cerah */
+  box-shadow: inset 0 0 18px rgba(75, 60, 178, 0.15);
+  scrollbar-width: thin;
+  scrollbar-color: #6b7dfc transparent;
+  margin-bottom: 20px;
+}
+
+.chat-box::-webkit-scrollbar {
+  width: 10px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+  background-color: #6b7dfc; /* ungu terang */
+  border-radius: 20px;
+  border: 3px solid #e9f0ff;
+}
+
+.message {
+  max-width: 75%;
+  padding: 14px 22px;
+  margin-bottom: 16px;
+  border-radius: 28px;
+  position: relative;
+  font-size: 16px;
+  line-height: 1.5;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  word-break: break-word;
+  clear: both;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+  cursor: context-menu;
+}
+
+.message:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.18);
+  z-index: 10;
+}
+
+.message.user {
+  background: linear-gradient(135deg, #5a9ffd, #2a55fb);
+  color: white;
+  float: right;
+  border-bottom-right-radius: 6px;
+  text-shadow: 0 0 3px rgba(0,0,0,0.25);
+}
+
+.message.user:hover {
+  background: linear-gradient(135deg, #4290f5, #3a78d9);
+}
+
+.message.bot:hover {
+  background: linear-gradient(135deg, #b5d3f3, #8bb5e6);
+}
+
+.message.bot {
+  background: linear-gradient(135deg, #cde7ff, #95c0ff);
+  color: #1d2b6f;
+  float: left;
+  border-bottom-left-radius: 6px;
+  font-weight: 600;
+}
+
+.message::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+}
+
+.message.user::after {
+  right: -12px;
+  border-top: 12px solid #5a9ffd;
+  border-left: 12px solid transparent;
+  bottom: 0;
+}
+
+.message.bot::after {
+  left: -12px;
+  border-top: 12px solid #cde7ff;
+  border-right: 12px solid transparent;
+  bottom: 0;
+}
+
+form {
+  display: flex;
+  gap: 14px;
+  padding: 0 10px;
+  align-items: center;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 16px 24px;
+  font-size: 18px;
+  border-radius: 35px;
+  border: 2px solid #4f6ef7;
+  outline-offset: 2px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  color: #1e40af;
+  font-weight: 600;
+  background: linear-gradient(135deg, #e2e7f8, #d6e0fd);
+  box-shadow: 0 2px 8px rgba(79, 110, 247, 0.3);
+}
+
+input[type="text"]::placeholder {
+  color: #6978c2;
+  font-weight: 500;
+}
+
+input[type="text"]:focus {
+  border-color: #1e40af;
+  background: #e4e9fd;
+  box-shadow: 0 0 18px rgba(30, 64, 175, 0.75);
+  color: #3866ff;
+}
+
+button {
+  background: linear-gradient(135deg, #6246ea, #2a55fb);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 15px rgba(42, 85, 251, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+}
+
+button:hover,
+button:focus {
+  background: linear-gradient(135deg, #392dbf, #1a2dca);
+  box-shadow: 0 12px 25px rgba(26, 45, 202, 0.8);
+}
+
+button svg {
+  pointer-events: none;
+  width: 22px;
+  height: 22px;
+}
